@@ -4,10 +4,11 @@ var nodeFetch = require('node-fetch');
 // We catch this and re-export the actual function rather than the module.
 var fetchFn = nodeFetch.default || nodeFetch;
 
-module.exports = {
-  default: fetchFn,
-  fetch: fetchFn,
-  Headers: nodeFetch.Headers,
-  Request: nodeFetch.Request,
-  Response: nodeFetch.Response
-};
+// We need to export it at the root and default so typescript without
+// esModuleInterop will work.
+module.exports = fetchFn;
+module.exports.default = fetchFn;
+module.exports.fetch = fetchFn;
+module.exports.Headers = nodeFetch.Headers;
+module.exports.Request = nodeFetch.Request;
+module.exports.Response = nodeFetch.Response;
