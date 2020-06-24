@@ -1,6 +1,6 @@
 {
   "name": "native-cross-fetch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Isomorphic fetch for Node and Browser environments",
   "main": "index.js",
   "browser": "browser.js",
